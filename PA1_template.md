@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 ##Introduction.
 The dataset in this assignment contains data about number of steps per 5 minute intervals during the months of October and November, 2012 as collected by a personal activity monitoring device.
@@ -41,7 +46,7 @@ totalsteps<-tapply(df_no_na$steps,
 ```
 This data is then displayed in the form of a histogram where you can see the frequency of total steps taken per day.
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 This plot shows that the mean=***10766.1886792*** and the median=***10765*** for the total number of steps taken per day.
  (Mean = ```{r} mean(totalsteps,na.rm=TRUE) ``` and median=```{r} median(totalsteps,na.rm=TRUE) ```)
@@ -58,7 +63,7 @@ averagestepsperinterval<-tapply(df_no_na$steps,
 
 This array is then plotted below.
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 Interval ***835*** contains the maximum average for an interval with a step count of ***``206.1698113``***. (Interval = ```{r unlist(dimnames(averagestepsperinterval)[1])[which.max(averagestepsperinterval)]} ``` and maximum average = ```{r} averagestepsperinterval[which.max(averagestepsperinterval)]``` )
 
@@ -96,7 +101,7 @@ totalsteps_mean<-tapply(df_mean$steps,
                         sum)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
 
 The mean=***10766.1886792*** and the median=***10766.1886792*** for the number of steps taken per day. (Mean = ```{r} mean(totalsteps_mean,na.rm=TRUE) ``` and median=```{r} median(totalsteps_mean,na.rm=TRUE) ```)
 
@@ -119,6 +124,6 @@ df_mean$daytype<-factor(sapply(df_mean$date,
 
 2. Create a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png) 
 
 
